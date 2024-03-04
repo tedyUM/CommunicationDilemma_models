@@ -45,8 +45,8 @@ for i = 1:(length(t) - 1)
 
     end
        % Before delay, update normally
-        f(i+1,1) = f(i,1) + dt * -f(i,2);
-        f(i+1,2) = f(i,2) + dt * f(i,1);
+        f(i+1,1) = f(i,1) + dt * (-f(i,2) + k_cf*(c(i,1) - f(i,1)));
+        f(i+1,2) = f(i,2) + dt * (f(i,1) + k_cf*(c(i,2) - f(i,2)));
 end
 
 hold on;
