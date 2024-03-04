@@ -16,3 +16,4 @@ In order to investigate AS, a system consisting of 3 pairs of springs is impleme
 - `cspring_AS.m`: Proposed AS regime. Stimulus drives sensory cortex. Sensory cortex drives frontal cortex with some delay. Frontal cortex has a self negative time delay.
 - `cspring_FF.m`: FeedForward regime. Stimulus drives sensory cortex. Sensory cortex drives frontal cortex with some delay.
 - `cspring_FB.m`: FeedBack regime. Stimulus drives sensory cortex. Frontal cortex drives sensory cortex (feedback) with some delay.
+- `cspring_FBbi.m`: FeedBack regime with bi-directional coupling. Stimulus drives sensory cortex. Frontal cortex and sensory cortex are bidirectionally coupled with some time delay.
