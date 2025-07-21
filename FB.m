@@ -4,10 +4,11 @@ clear all
 beta_X = 4;
 beta_Y = 4;
 k = 1;
-epsilon = 1;
+epsilon1 = 1;
+epsilon2 = 0.5;
 r_I = 1.0;
 omega_I = 4; % Fixed omega_I
-tau_2 =1  ;
+tau_2 =0.1  ;
 r_X = 1;  % Constant radius for X
 r_Y = 1;  % Constant radius for Y
 
@@ -46,9 +47,11 @@ for i = 2:length(tspan)
     idx_tau2 = max(1, i - tau_2_steps);
 
     theta_Y_tau2 = theta_Y(idx_tau2);
+		theta_X_tau2 = theta_X(idx_tau2);
+
 
     % Phase reduced model equations
-    dtheta_X = beta_X + k*sin(theta_I(i-1) - theta_X(i-1)) + epsilon * sin(theta_Y_tau2 - theta_X(i-1));
+    dtheta_X = beta_X + k*sin(theta_I(i-1) - theta_X(i-1)) + epsilon1 * sin(theta_Y_tau2 - theta_X(i-1)) + epsilon2 * sin(theta_X_tau2 - theta_Y(i-1));
     dtheta_Y = beta_Y ;
 
     % Update phase angles using Euler's method
